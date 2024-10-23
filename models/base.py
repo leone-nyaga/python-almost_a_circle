@@ -1,23 +1,19 @@
+#!/usr/bin/python3
+
 class Base:
-   """Base model.
+    """A base class"""
 
-    This Represents the "base" for all other classes in project 0x0C*.
-
-    Private Class Attributes:
-        __nb_object (int): Number of instantiated Bases.
-    """ 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Initialize new Base.
+        """Initialize a new base instance
 
         Args:
-            id (int): The identity of the new Base.
+            id(int, optional): The ID of the object, if not provided,
+            a new id will be generated.
         """
         if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-
-
