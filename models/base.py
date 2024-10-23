@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 class Base:
     """A base class"""
 

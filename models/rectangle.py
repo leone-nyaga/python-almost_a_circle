@@ -1,77 +1,58 @@
 #!/usr/bin/python3
+"""This module contains the Rectangle class"""
 
-from models.base import Base
+from base import Base
 
 class Rectangle(Base):
+    """Represents the Rectangle class that inherits from the base class"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """
-        Initialize a new Rectangle instance.
-
-        :param width: The width of the rectangle.
-        :param height: The height of the rectangle.
-        :param x: The x coordinate (default is 0).
-        :param y: The y coordinate (default is 0).
-        :param id: Optional id for the instance.
+        Initializes Rectangle instance
+        :param width: The width of the rectangle
+        :param height: The height of the rectangel
+        :param x: The x cordinate(default is zero)
+        :param y: The y cordinate(default is zero)
+        :param id: Optional id for the instance
         """
         super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
-    """Getter and Setter for width"""
-    @property
-    def width(self):
-        return self.__width
+        """getter and setter for width"""
+        @property
+        def width(self):
+            return self.__width
 
-    @width.setter
-    def width(self, value):
-        if not isinstance(value, int) or value <= 0:
-            raise ValueError("width must be a positive integer")
-        self.__width = value
+        @width.setter
+        def width(self, value):
+            self.__width = value
 
-    """Getter and Setter for height"""
-    @property
-    def height(self):
-        return self.__height
+        """getter and setter for height"""
+        @property
+        def height(self):
+            return self.__height
 
-    @height.setter
-    def height(self, value):
-        if not isinstance(value, int) or value <= 0:
-            raise ValueError("height must be a positive integer")
-        self.__height = value
+        @height.setter
+        def height(self, value):
+            self.__height = value
 
-    """Getter and Setter for x (x coordinate)"""
-    @property
-    def x(self):
-        return self.__x
+        """getter and setter for x"""
+        @property
+        def x(self):
+            return self.__x
 
-    @x.setter
-    def x(self, value):
-        if not isinstance(value, int) or value < 0:
-            raise ValueError("x must be a non-negative integer")
-        self.__x = value
+        @x.setter
+        def x(self, value):
+            self.__x = value
 
-    """Getter and Setter for y (y coordinate)"""
-    @property
-    def y(self):
-        return self.__y
+        """getter and setter for y"""
+        @property
+        def y(self):
+            return self.__y
 
-    @y.setter
-    def y(self, value):
-        if not isinstance(value, int) or value < 0:
-            raise ValueError("y must be a non-negative integer")
-        self.__y = value
-
-    """Method to calculate area of the rectangle"""
-    def area(self):
-        return self.width * self.height
-
-    """Method to calculate perimeter of the rectangle"""
-    def perimeter(self):
-        return 2 * (self.width + self.height)
-
-    """String representation of the rectangle"""
-    def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
-
+        @y.setter
+        def y(self, value):
+            self.__y = value
