@@ -84,11 +84,14 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        """Prints the rectangle using '#' characters."""
+        """Prints the rectangle using '#' characters, considering x and y offsets."""
+        print('\n' * self.y, end='')
+
         for _ in range(self.height):
-            print('#' * self.width)
+            print(' ' * self.x + '#' * self.width)
 
     def __str__(self):
         """overrides the __str__ method so that it returns a statement"""
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} -\
-        {self.__width}/{self.__height}"
+                {self.__width}/{self.__height}"
+
