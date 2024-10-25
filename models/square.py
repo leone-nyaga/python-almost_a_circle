@@ -63,3 +63,12 @@ class Square(Rectangle):
         """Overrides the __str__ method to return a statement."""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
+    def to_dictionary(self):
+        """Returns string representation of the Square class"""
+        return {
+                'id': self.id,
+                'size': self.width,
+                'x': self.x,
+                'y': self.y
+                }
+
